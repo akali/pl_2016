@@ -12,7 +12,9 @@ bool check(int x) {
 	cur += a[x];
 	bool ok = check(x + 1);
 	cur -= a[x] + a[x];
-	return ok | check(x + 1);
+	ok |= check(x + 1);
+	cur += a[x];
+	return ok;
 }
 
 int main() {
